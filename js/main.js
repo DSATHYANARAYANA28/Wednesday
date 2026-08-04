@@ -664,6 +664,474 @@ document.getElementById("year").textContent = yr;
 document.getElementById("revYear").textContent = yr;
 
 /* ============================================================
+   FIG. 07 — SITE RUNNER (final CTA)
+   Blueprint remix of the Chrome dino: the site outruns
+   DOWNTIME, BUG #042 and TECH DEBT. Space/tap to play.
+   ============================================================ */
+(function initRunner() {
+  const wrap = document.getElementById("ctaRunner");
+  const canvas = document.getElementById("runnerCanvas");
+  const note = document.getElementById("runnerNote");
+  const bubble = document.getElementById("runnerBubble");
+  if (!wrap || !canvas) return;
+
+  const section = wrap.closest(".cta");
+  const ctx = canvas.getContext("2d");
+
+  const INK = "#10131a";
+  const INK_SOFT = "#3c4354";
+  const INK_FAINT = "#59627a";
+  const COBALT = "#1e46e0";
+  const PAPER = "#ffffff";
+
+  /* ---- pixel sprites ('#' ink, 'c' cobalt, 'x' paper) ----
+     Runner is a panda: white outlined head with ink ear, eye
+     patch and nose; solid ink body and legs (quadruped). */
+  /* front-facing upright panda, 24×35 grid (~96×140 on screen):
+     round head with ears + eye patches, white belly, black arms
+     with claw pixels, bipedal legs */
+  const PANDA_BODY = [
+    "....###......###........",
+    "...#####....#####.......",
+    "...#####....#####.......",
+    "..###################...",
+    "..#xxxxxxxxxxxxxxxxx#...",
+    "..#xxxxxxxxxxxxxxxxx#...",
+    "..#xx####xxxx####xxx#...",
+    "..#xx#x##xxxx#x##xxx#...",
+    "..#xx####xxxx####xxx#...",
+    "..#xxx##xxxxxx##xxxx#...",
+    "..#xxxxxxx###xxxxxxx#...",
+    "..#xxxxxxxx#xxxxxxxx#...",
+    "...#xxxxxx###xxxxxx#....",
+    "....################....",
+    "...##################...",
+    "..####xxxxxxxxxx####....",
+    ".#####xxxxxxxxxx#####...",
+    ".#####xxxxxxxxxx#####...",
+    ".#####xxxxxxxxxx#####...",
+    ".#####xxxxxxxxxx#####...",
+    ".#####xxxxxxxxxx#####...",
+    ".##x##xxxxxxxxxx##x##...",
+    "..###xxxxxxxxxxxx###....",
+    "...#xxxxxxxxxxxxxx#.....",
+    "...#xxxxxxxxxxxxxx#.....",
+    "...##xxxxxxxxxxxx##.....",
+    "....##############......",
+    "....##############......",
+    "....##############......",
+    "....##############......",
+  ];
+  const STAND = PANDA_BODY.concat([
+    ".....####..####.........",
+    ".....####..####.........",
+    ".....####..####.........",
+    "....#####..#####........",
+    "....#x###..#x###........",
+  ]);
+  const DEAD = STAND; /* on failure it turns back to face you */
+
+  /* side profile (facing right) — the panda turns into this the
+     moment a run starts */
+  const PROFILE_BODY = [
+    "......####..............",
+    "......####..............",
+    "....################....",
+    "...#xxxxxxxxxxxxxxxx#...",
+    "...#xxxxxxxxxxxxxxxx#...",
+    "...#xxxxxxxxxx####xx#...",
+    "...#xxxxxxxxxx#x##xx#...",
+    "...#xxxxxxxxxx####xx#...",
+    "...#xxxxxxxxxxx##xxx#...",
+    "...#xxxxxxxxxxxxxxxx##..",
+    "...#xxxxxxxxxxxxxxxx###.",
+    "...#xxxxxxxxxxxxxxxx###.",
+    "....#xxxxxxxxxxxxxx##...",
+    ".....##############.....",
+    "....##############......",
+    "...##################...",
+    "...#########xxxxxxx##...",
+    "...#########xxxxxxx##...",
+    "...#########xxxxxxx##...",
+    "...#########xxxxxxx##...",
+    "...#########xxxxxxx##...",
+    "...#########xxxxxxx##...",
+    "...#########xxxxxxx##...",
+    "...##########xxxxxx##...",
+    "...###########xxxx###...",
+    "....################....",
+    "....################....",
+    "....################....",
+    "....################....",
+    "....################....",
+  ];
+  const RUN_A = PROFILE_BODY.concat([
+    "......####......####....",
+    ".....####........####...",
+    "....####..........####..",
+    "...####............####.",
+    "...#x##.............#x##",
+  ]);
+  const RUN_B = PROFILE_BODY.concat([
+    "........####..####......",
+    ".........###..###.......",
+    "..........##..##........",
+    ".........###..###.......",
+    ".........#x##.#x##......",
+  ]);
+  /* swinging front arm, overlaid on the profile body */
+  const BLANK = "........................";
+  const ARM_A = Array(15).fill(BLANK).concat([
+    ".............####.......",
+    "..............####......",
+    "...............####.....",
+    "...............####.....",
+    "................###.....",
+    "................###.....",
+    "................#x#.....",
+    "................###.....",
+  ]);
+  const ARM_B = Array(15).fill(BLANK).concat([
+    "........####............",
+    ".......####.............",
+    "......####..............",
+    "......###...............",
+    ".....###................",
+    ".....###................",
+    ".....#x#................",
+    ".....###................",
+  ]);
+
+  /* tumble roll: ink ball, white patch orbits to sell the spin */
+  const BALL = [
+    ".....######.....",
+    "...##########...",
+    "..############..",
+    ".##############.",
+    ".##############.",
+    "################",
+    "################",
+    "################",
+    "################",
+    "################",
+    "################",
+    ".##############.",
+    ".##############.",
+    "..############..",
+    "...##########...",
+    ".....######.....",
+  ];
+  const carve = (r0, c0) =>
+    BALL.map((row, r) =>
+      r >= r0 && r < r0 + 4
+        ? row.substring(0, c0) + row.substring(c0, c0 + 4).replace(/#/g, "x") + row.substring(c0 + 4)
+        : row
+    );
+  const ROLL = [carve(2, 6), carve(6, 11), carve(11, 6), carve(6, 2)];
+
+  const BIRD_UP = [
+    "......cc..........",
+    "......ccc.........",
+    "......cccc........",
+    "cccccccccccccc....",
+    ".ccccccccccccccccc",
+    "..cccccccccc......",
+  ];
+  const BIRD_DOWN = [
+    "..cccccccccc......",
+    ".ccccccccccccccccc",
+    "cccccccccccccc....",
+    "......cccc........",
+    "......ccc.........",
+    "......cc..........",
+  ];
+
+  const PX = 4;            /* panda pixel size */
+  const BIRD_PX = 4;
+  const HAZARDS = ["VIRUS.EXE", "TROJAN", "WORM", "RANSOMWARE", "PHISHING", "SPYWARE", "DOWNTIME", "BUG #042", "TECH DEBT", "404"];
+
+  /* ---- state ---- */
+  let W = 0, H = 0, dpr = 1, groundY = 0;
+  let state = "idle";       /* idle | running | dead */
+  let dist = 0, speed = 0, frame = 0;
+  let hi = parseInt(localStorage.getItem("wd_runner_hi") || "0", 10) || 0;
+  let dino, obstacles, decor;
+  let inView = false;
+
+  function resize() {
+    W = wrap.clientWidth;
+    H = wrap.clientHeight;
+    dpr = Math.min(devicePixelRatio || 1, 2);
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    groundY = H - 34;
+  }
+
+  function reset() {
+    dist = 0;
+    speed = 5.5;
+    frame = 0;
+    dino = { x: 30, y: groundY, vy: 0, ducking: false, onGround: true };
+    obstacles = [];
+    decor = [
+      { x: W * 0.3, y: 24, w: 60, s: 0.25 },
+      { x: W * 0.75, y: 40, w: 42, s: 0.4 },
+    ];
+  }
+
+  function setNote(t) { note.textContent = t; }
+
+  function start() {
+    reset();
+    state = "running";
+    wrap.classList.remove("is-over");
+    bubble.classList.add("is-hidden");
+    setNote("FIG. 07 — SITE RUNNER · DEPLOYED — BLOCK THE VIRUSES");
+  }
+
+  function die() {
+    state = "dead";
+    wrap.classList.add("is-over");
+    const score = Math.floor(dist / 8);
+    if (score > hi) {
+      hi = score;
+      localStorage.setItem("wd_runner_hi", String(hi));
+    }
+    bubble.innerHTML = "THE VIRUSES GOT THROUGH!<br>PRESS SPACE OR TAP TO <b>REDEPLOY ▶</b>";
+    bubble.classList.remove("is-hidden");
+    setNote("SYSTEM FAILURE — PRESS SPACE OR TAP TO REDEPLOY");
+    draw(); /* render the death frame even while the loop idles */
+  }
+
+  /* ---- input ---- */
+  function jump() {
+    if (!dino.onGround) return;
+    dino.vy = -11;
+    dino.onGround = false;
+    dino.ducking = false;
+  }
+  function press() {
+    if (!dino) return; /* not sized yet */
+    if (state === "running") jump();
+    else start();
+  }
+
+  window.addEventListener("keydown", (e) => {
+    if (!inView) return;
+    if ((e.code === "Space" || e.code === "ArrowUp") && !e.repeat) {
+      e.preventDefault();
+      press();
+    } else if (e.code === "Space" || e.code === "ArrowUp") {
+      e.preventDefault(); /* held key: keep the page from scrolling */
+    } else if (e.code === "ArrowDown" && state === "running") {
+      e.preventDefault();
+      if (dino.onGround) dino.ducking = true;
+      else dino.vy += 2.4; /* fast-fall */
+    }
+  });
+  window.addEventListener("keyup", (e) => {
+    if (!dino) return;
+    if (e.code === "ArrowDown") dino.ducking = false;
+    /* early release = shorter hop, like the original */
+    if ((e.code === "Space" || e.code === "ArrowUp") && state === "running" && dino.vy < -4.5) dino.vy = -4.5;
+  });
+  canvas.addEventListener("pointerdown", (e) => {
+    e.preventDefault();
+    press();
+  });
+
+  new IntersectionObserver(([e]) => (inView = e.isIntersecting), { threshold: 0.15 }).observe(wrap);
+
+  /* ---- spawning ---- */
+  function spawn() {
+    const score = Math.floor(dist / 8);
+    const roll = Math.random();
+    if (score > 120 && roll < 0.22) {
+      /* bird: low = jump it, mid = duck it (desktop only), high = run under */
+      const lanes = isTouch ? [groundY - 22, groundY - 150] : [groundY - 22, groundY - 70, groundY - 150];
+      const y = lanes[Math.floor(Math.random() * lanes.length)];
+      obstacles.push({ kind: "bird", x: W + 40, y, w: 18 * BIRD_PX, h: 6 * BIRD_PX });
+    } else {
+      const label = HAZARDS[Math.floor(Math.random() * HAZARDS.length)];
+      const w = label.length * 8.5 + 20;
+      const stack = score > 300 && Math.random() < 0.25 ? 2 : 1;
+      obstacles.push({ kind: "chip", x: W + 40, label, w, h: 34 * stack, stack });
+    }
+  }
+
+  /* ---- drawing ---- */
+  function sprite(map, x, y, px) {
+    for (let r = 0; r < map.length; r++) {
+      const row = map[r];
+      for (let c = 0; c < row.length; c++) {
+        const ch = row[c];
+        if (ch === ".") continue;
+        ctx.fillStyle = ch === "c" ? COBALT : ch === "x" ? PAPER : INK;
+        ctx.fillRect(x + c * px, y + r * px, px, px);
+      }
+    }
+  }
+
+  function drawChip(o) {
+    for (let s = 0; s < o.stack; s++) {
+      const y = groundY - 34 * (s + 1);
+      ctx.fillStyle = INK;
+      ctx.fillRect(o.x + 3, y + 3, o.w, 34); /* hard shadow */
+      ctx.fillStyle = PAPER;
+      ctx.fillRect(o.x, y, o.w, 34);
+      ctx.strokeStyle = INK;
+      ctx.lineWidth = 2;
+      ctx.strokeRect(o.x + 1, y + 1, o.w - 2, 32);
+      ctx.fillStyle = COBALT;
+      ctx.font = '600 13px "IBM Plex Mono", monospace';
+      ctx.textBaseline = "middle";
+      ctx.textAlign = "center";
+      ctx.fillText(o.label, o.x + o.w / 2, y + 18);
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    /* drifting detail callouts (background) */
+    ctx.strokeStyle = "rgba(30,70,224,0.18)";
+    ctx.lineWidth = 1;
+    decor.forEach((d) => {
+      ctx.strokeRect(d.x, d.y, d.w, d.w * 0.4);
+      ctx.beginPath();
+      ctx.moveTo(d.x + d.w, d.y + d.w * 0.4);
+      ctx.lineTo(d.x + d.w + 18, d.y + d.w * 0.4 + 10);
+      ctx.stroke();
+    });
+
+    /* ground: drafting datum line + ticks */
+    ctx.fillStyle = INK;
+    ctx.fillRect(0, groundY, W, 2);
+    ctx.fillStyle = INK_FAINT;
+    const off = Math.floor(dist % 48);
+    for (let x = -off; x < W; x += 48) ctx.fillRect(x, groundY + 7, 14, 2);
+
+    /* obstacles */
+    obstacles.forEach((o) => {
+      if (o.kind === "chip") drawChip(o);
+      else sprite(frame % 24 < 12 ? BIRD_UP : BIRD_DOWN, o.x, o.y - o.h, BIRD_PX);
+    });
+
+    /* panda — faces you while idle/dead, turns to profile to run */
+    let map, arm = null;
+    if (state === "dead") map = DEAD;
+    else if (state === "idle") map = STAND;
+    else if (dino.ducking && dino.onGround) map = ROLL[Math.floor(frame / 3) % 4];
+    else if (!dino.onGround) { map = RUN_A; arm = ARM_A; }
+    else {
+      const strideA = frame % 16 < 8;
+      map = strideA ? RUN_A : RUN_B;
+      arm = strideA ? ARM_A : ARM_B;
+    }
+    const px = PX;
+    const h = map.length * px;
+    sprite(map, dino.x, dino.y - h, px);
+    if (arm) sprite(arm, dino.x, dino.y - h, px);
+
+    /* HUD — drafting readout */
+    const score = Math.floor(dist / 8);
+    ctx.fillStyle = INK_FAINT;
+    ctx.font = '500 11px "IBM Plex Mono", monospace';
+    ctx.textAlign = "right";
+    ctx.textBaseline = "top";
+    ctx.fillText(`DIST ${String(score).padStart(5, "0")} · HI ${String(hi).padStart(5, "0")}`, W - 18, 12);
+
+    /* game-over stamp */
+    if (state === "dead") {
+      ctx.save();
+      ctx.translate(W / 2, H / 2 - 14);
+      ctx.rotate(-0.05);
+      ctx.strokeStyle = COBALT;
+      ctx.lineWidth = 3;
+      ctx.strokeRect(-128, -20, 256, 40);
+      ctx.fillStyle = COBALT;
+      ctx.font = '700 15px "IBM Plex Mono", monospace';
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText("SYSTEM FAILURE", 0, 1);
+      ctx.restore();
+    }
+  }
+
+  /* ---- simulation ---- */
+  function step(mult) {
+    frame++;
+    dist += speed * mult;
+    speed = Math.min(13, speed + 0.0016 * mult);
+
+    /* dino vertical */
+    if (!dino.onGround) {
+      dino.vy += 0.62 * mult;
+      dino.y += dino.vy * mult;
+      if (dino.y >= groundY) {
+        dino.y = groundY;
+        dino.vy = 0;
+        dino.onGround = true;
+      }
+    }
+
+    /* decor drift */
+    decor.forEach((d) => {
+      d.x -= speed * d.s * mult;
+      if (d.x < -d.w - 30) d.x = W + Math.random() * 200;
+    });
+
+    /* obstacles */
+    obstacles.forEach((o) => (o.x -= speed * mult));
+    obstacles = obstacles.filter((o) => o.x > -o.w - 60);
+    const last = obstacles[obstacles.length - 1];
+    if (!last || last.x < W - (260 + Math.random() * 320 + speed * 22)) spawn();
+
+    /* collision (AABB, forgiving inset) */
+    const duckNow = dino.ducking && dino.onGround;
+    const dw = (duckNow ? 16 : 18) * PX;
+    const dh = (duckNow ? 16 : 35) * PX;
+    const dx1 = dino.x + 8, dx2 = dino.x + dw - 10;
+    const dy1 = dino.y - dh + 6, dy2 = dino.y - 2;
+    for (const o of obstacles) {
+      const oy1 = o.kind === "chip" ? groundY - o.h : o.y - o.h;
+      const oy2 = o.kind === "chip" ? groundY : o.y;
+      if (dx2 > o.x + 5 && dx1 < o.x + o.w - 5 && dy2 > oy1 + 4 && dy1 < oy2 - 4) {
+        die();
+        return;
+      }
+    }
+  }
+
+  /* one loop on gsap's ticker — steps only while running & visible */
+  gsap.ticker.add((time, deltaMS) => {
+    if (!dino || !inView || state !== "running") return;
+    step(Math.min(deltaMS, 50) / (1000 / 60));
+    if (state === "running") draw();
+  });
+
+  let rt;
+  window.addEventListener("resize", () => {
+    clearTimeout(rt);
+    rt = setTimeout(() => {
+      resize();
+      if (state !== "running") {
+        if (state === "idle") reset();
+        else dino.y = groundY;
+        draw();
+      }
+    }, 150);
+  });
+
+  document.fonts.ready.then(() => {
+    resize();
+    reset();
+    draw();
+  });
+})();
+
+/* ============================================================
    Three.js — CAD wireframe assembly (hero, FIG. A)
    ============================================================ */
 (function initWireframe() {
