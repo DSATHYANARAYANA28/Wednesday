@@ -155,8 +155,8 @@ if (chartLine) {
     c.setAttribute("y", p.y - 3);
     c.setAttribute("width", 6);
     c.setAttribute("height", 6);
-    c.setAttribute("fill", "#fbfcfe");
-    c.setAttribute("stroke", "#1e46e0");
+    c.setAttribute("fill", "#ffffff");
+    c.setAttribute("stroke", "#1e4bb8");
     c.setAttribute("stroke-width", "1.5");
     ptsGroup.appendChild(c);
   }
@@ -288,6 +288,7 @@ Object.keys(SHEET_NAMES).forEach((id) => {
     end: "bottom 40%",
     onToggle: (self) => {
       document.querySelectorAll(`.nav__link[href="#${id}"]`).forEach((l) => l.classList.toggle("is-active", self.isActive));
+      if (!navReadout) return;
       if (self.isActive) navReadout.textContent = SHEET_NAMES[id];
       else if (!Object.keys(SHEET_NAMES).some((k) => k !== id && document.querySelector(`.nav__link[href="#${k}"].is-active`)))
         navReadout.textContent = "DWG 001 — MASTER";
@@ -679,10 +680,10 @@ document.getElementById("revYear").textContent = yr;
   const section = wrap.closest(".cta");
   const ctx = canvas.getContext("2d");
 
-  const INK = "#10131a";
-  const INK_SOFT = "#3c4354";
-  const INK_FAINT = "#59627a";
-  const COBALT = "#1e46e0";
+  const INK = "#0e1a2e";
+  const INK_SOFT = "#3e4a61";
+  const INK_FAINT = "#61708c";
+  const COBALT = "#1e4bb8";
   const PAPER = "#ffffff";
 
   /* ---- pixel sprites ('#' ink, 'c' cobalt, 'x' paper) ----
@@ -996,7 +997,7 @@ document.getElementById("revYear").textContent = yr;
     ctx.clearRect(0, 0, W, H);
 
     /* drifting detail callouts (background) */
-    ctx.strokeStyle = "rgba(30,70,224,0.18)";
+    ctx.strokeStyle = "rgba(30,75,184,0.18)";
     ctx.lineWidth = 1;
     decor.forEach((d) => {
       ctx.strokeRect(d.x, d.y, d.w, d.w * 0.4);
@@ -1150,8 +1151,8 @@ document.getElementById("revYear").textContent = yr;
   const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
   camera.position.set(0, 0, 6.6);
 
-  const COBALT = new THREE.Color(0x1e46e0);
-  const INK = new THREE.Color(0x10131a);
+  const COBALT = new THREE.Color(0x1e4bb8);
+  const INK = new THREE.Color(0x0e1a2e);
 
   const group = new THREE.Group();
   scene.add(group);

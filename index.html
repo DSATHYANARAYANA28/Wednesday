@@ -9,7 +9,7 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="author" content="Wednesday Technology">
   <link rel="canonical" href="https://wednesday.technology/">
-  <meta name="theme-color" content="#fbfcff">
+  <meta name="theme-color" content="#f7f8fa">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -31,10 +31,10 @@
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="apple-touch-icon" href="logo.png">
 
-  <!-- Fonts: Anton (monumental display) · Archivo (body) · IBM Plex Mono (drafting annotations) -->
+  <!-- Fonts: Inter (display + body) · IBM Plex Mono (annotations) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css?v=20260804">
 
@@ -169,34 +169,27 @@
   <!-- ===== Navigation ===== -->
   <header class="nav" id="nav">
     <div class="nav__strip">
-      <a href="#top" class="nav__cell nav__brand" aria-label="Wednesday — home">
-        <img src="logo.png" alt="Wednesday Technology logo" class="nav__logo" width="40" height="40">
-        <span class="nav__name mono">WEDNESDAY<span class="nav__tld">.TECHNOLOGY</span></span>
+      <a href="#top" class="nav__brand" aria-label="Wednesday — home">
+        <img src="logo.png" alt="Wednesday Technology logo" class="nav__logo" width="36" height="36">
+        <span class="nav__name">Wednesday<span class="nav__tld">.technology</span></span>
       </a>
 
-      <nav class="nav__links mono" aria-label="Primary">
-        <a href="#services" class="nav__link nav__cell"><sup>01</sup>Services</a>
-        <a href="#rates" class="nav__link nav__cell"><sup>02</sup>Rates</a>
-        <a href="#work" class="nav__link nav__cell"><sup>03</sup>Work</a>
-        <a href="#products" class="nav__link nav__cell"><sup>04</sup>Products</a>
-        <a href="#process" class="nav__link nav__cell"><sup>05</sup>Process</a>
-        <a href="#faq" class="nav__link nav__cell"><sup>06</sup>FAQ</a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#services" class="nav__link">Services</a>
+        <a href="#rates" class="nav__link">Rates</a>
+        <a href="#work" class="nav__link">Work</a>
+        <a href="#products" class="nav__link">Products</a>
+        <a href="#process" class="nav__link">Process</a>
+        <a href="#faq" class="nav__link">FAQ</a>
       </nav>
 
-      <div class="nav__cell nav__meta nav__readout mono" aria-hidden="true">
-        <span class="nav__cell-k">READING</span>
-        <span class="nav__cell-v" id="navReadout">DWG 001 — MASTER</span>
+      <div class="nav__actions">
+        <span class="nav__status" aria-hidden="true"><span class="dot"></span>Online</span>
+        <a href="https://wa.me/919655419510?text=Hi%2C%20I%20saw%20your%20rates%20on%20wednesday.technology%20and%20I%27d%20like%20to%20discuss%20a%20project."
+           class="nav__cta" target="_blank" rel="noopener">WhatsApp&nbsp;↗</a>
       </div>
 
-      <div class="nav__cell nav__meta nav__time mono" aria-hidden="true">
-        <span class="nav__cell-k"><span class="dot" aria-hidden="true"></span> ONLINE · IST</span>
-        <span class="nav__cell-v" id="navClock">--:--</span>
-      </div>
-
-      <a href="https://wa.me/919655419510?text=Hi%2C%20I%20saw%20your%20rates%20on%20wednesday.technology%20and%20I%27d%20like%20to%20discuss%20a%20project."
-         class="nav__cell nav__cta mono" target="_blank" rel="noopener">WhatsApp ↗</a>
-
-      <button class="nav__cell nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span>
       </button>
     </div>
@@ -244,10 +237,10 @@
           <p class="hero__eyebrow mono" id="heroEyebrow">IT SERVICES &amp; CUSTOM SOFTWARE AGENCY</p>
           <h1 class="hero__title" id="heroTitle">
             <span class="sr-only">Wednesday — software engineering agency. </span>
-            <span class="hero__line" aria-hidden="false">WE BUILD</span>
-            <span class="hero__line hero__line--outline">CUSTOM</span>
-            <span class="hero__line">SOFTWARE<span class="hero__dot">.</span></span>
-            <span class="hero__line hero__line--cobalt">THEN WE RUN IT<span class="hero__dot">.</span></span>
+            <span class="hero__line" aria-hidden="false">We build</span>
+            <span class="hero__line hero__line--outline">custom</span>
+            <span class="hero__line">software<span class="hero__dot">.</span></span>
+            <span class="hero__line hero__line--cobalt">Then we run it<span class="hero__dot">.</span></span>
           </h1>
 
           <p class="hero__sub" id="heroSub">
@@ -319,7 +312,7 @@
           <span class="sheetbar__meta"><span class="dot" aria-hidden="true"></span>OPERATIONAL — ZERO DOWNTIME VERIFIED</span>
         </header>
 
-        <h2 class="display display--md reveal" id="monitorHeading">EVERY SYSTEM WE SHIP<br><span class="cobalt">STAYS RUNNING.</span></h2>
+        <h2 class="display display--md reveal" id="monitorHeading">Every system we ship<br><span class="cobalt">stays running.</span></h2>
 
         <div class="monitor__grid">
           <div class="metric reveal">
@@ -368,7 +361,7 @@
           <span class="sheetbar__meta">SCALE 1:1 · REV A</span>
         </header>
 
-        <h2 class="display display--lg split-slam" id="servicesHeading">SOFTWARE ENGINEERING,<br><span class="outline">END TO END.</span></h2>
+        <h2 class="display display--lg split-slam" id="servicesHeading">Software engineering,<br><span class="outline">end to end.</span></h2>
         <p class="section__intro reveal">Professional firm, venue, or B2B business — we design, build, launch and then <strong>operate</strong> custom software tuned to your goals. One team. Zero hand-offs.</p>
 
         <div class="services__grid">
@@ -486,7 +479,7 @@
           <span class="sheetbar__meta">PRICES EXCL. GST</span>
         </header>
 
-        <h2 class="display display--lg split-slam" id="ratesHeading">PUBLISHED,<br><span class="outline">NOT QUOTED.</span></h2>
+        <h2 class="display display--lg split-slam" id="ratesHeading">Published,<br><span class="outline">not quoted.</span></h2>
         <p class="section__intro reveal">Every price is on this page. No discovery call to find out what it costs, no proposal to wait for.</p>
 
         <div class="rates__tabs reveal" role="tablist" aria-label="Rate categories">
@@ -559,7 +552,7 @@
           <span class="sheetbar__meta">CLIENTS UNNAMED BY DESIGN</span>
         </header>
 
-        <h2 class="display display--lg split-slam" id="workHeading">SHIPPED, AND LIVE<br><span class="outline">RIGHT NOW.</span></h2>
+        <h2 class="display display--lg split-slam" id="workHeading">Shipped, and live<br><span class="outline">right now.</span></h2>
         <p class="section__intro reveal">Clients unnamed by design — we protect their privacy the way we'd protect yours.</p>
 
         <div class="work__list">
@@ -676,7 +669,7 @@
           <span class="sheetbar__meta">BUILT &amp; OPERATED BY WEDNESDAY</span>
         </header>
 
-        <h2 class="display display--lg split-slam" id="productsHeading">BUILT HERE.<br><span class="outline">RUN HERE.</span></h2>
+        <h2 class="display display--lg split-slam" id="productsHeading">Built here.<br><span class="outline">Run here.</span></h2>
         <p class="section__intro reveal">We don't just build for clients — we build and operate our own software. Proof we can run what we ship.</p>
 
         <div class="products__grid">
@@ -728,7 +721,7 @@
           <span class="sheetbar__meta">PREDICTABLE DELIVERY</span>
         </header>
 
-        <h2 class="display display--lg split-slam" id="processHeading">BORING,<br><span class="outline">ON PURPOSE.</span></h2>
+        <h2 class="display display--lg split-slam" id="processHeading">Boring,<br><span class="outline">on purpose.</span></h2>
         <p class="section__intro reveal">A disciplined process means predictable delivery, zero surprise breakages, and software that behaves in the real world — not just in demos.</p>
 
         <div class="schedule">
@@ -800,7 +793,7 @@
           <span class="sheetbar__meta">ASKED ON THE INTERNET · ANSWERED HERE</span>
         </header>
 
-        <h2 class="display display--lg split-slam" id="faqHeading">ASKED,<br><span class="outline">ANSWERED.</span></h2>
+        <h2 class="display display--lg split-slam" id="faqHeading">Asked,<br><span class="outline">answered.</span></h2>
         <p class="section__intro reveal">The questions every client asks — answered with the same published numbers you'll find on this sheet.</p>
 
         <div class="faq__list reveal">
@@ -850,7 +843,7 @@
       </div>
       <div class="container cta__container">
         <p class="mono cta__eyebrow reveal">FINAL SHEET — LET'S BUILD TOGETHER</p>
-        <h2 class="display display--xl split-slam" id="ctaHeading">HAVE SOMETHING<br><span class="cobalt">WORTH BUILDING?</span></h2>
+        <h2 class="display display--xl split-slam" id="ctaHeading">Have something<br><span class="cobalt">worth building?</span></h2>
         <div class="stamp stamp--big mono" id="ctaStamp" aria-hidden="true">APPROVED FOR CONSTRUCTION</div>
         <p class="cta__body reveal">Need custom software or a website built and run for your business? Rates are published — so you know the number <strong>before</strong> we talk.</p>
         <div class="cta__buttons reveal">
