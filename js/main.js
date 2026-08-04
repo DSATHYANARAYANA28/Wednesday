@@ -7,7 +7,7 @@ import * as THREE from "three";
 document.documentElement.classList.add("js");
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
-gsap.defaults({ ease: "power3.out", duration: 0.9 });
+gsap.defaults({ ease: "power3.out", duration: 0.65 });
 
 const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
@@ -15,7 +15,7 @@ const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
 /* ---------- Lenis smooth scroll ---------- */
 let lenis = null;
 if (!prefersReduced) {
-  lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+  lenis = new Lenis({ lerp: 0.16, smoothWheel: true, wheelMultiplier: 1.25 });
   lenis.on("scroll", ScrollTrigger.update);
   gsap.ticker.add((t) => lenis.raf(t * 1000));
   gsap.ticker.lagSmoothing(0);
@@ -69,7 +69,7 @@ if (prefersReduced) {
   const counter = { v: 0 };
   gsap.to(counter, {
     v: 100,
-    duration: 1.15,
+    duration: 0.7,
     ease: "power2.inOut",
     onUpdate: () => {
       preCount.textContent = Math.round(counter.v);
@@ -78,7 +78,7 @@ if (prefersReduced) {
     onComplete: () => {
       gsap.to(preloader, {
         yPercent: -100,
-        duration: 0.8,
+        duration: 0.55,
         ease: "power4.inOut",
         onComplete: () => preloader.remove(),
       });
@@ -100,10 +100,10 @@ if (!prefersReduced) {
       });
       gsap.from(split.lines, {
         yPercent: 112,
-        duration: 0.95,
-        stagger: 0.1,
+        duration: 0.7,
+        stagger: 0.07,
         ease: "power4.out",
-        scrollTrigger: { trigger: el, start: "top 85%" },
+        scrollTrigger: { trigger: el, start: "top 92%" },
       });
     });
     ScrollTrigger.refresh();
@@ -113,10 +113,10 @@ if (!prefersReduced) {
 /* ---------- Batched reveals ---------- */
 if (!prefersReduced) {
   ScrollTrigger.batch(".reveal", {
-    start: "top 88%",
+    start: "top 94%",
     onEnter: (els) =>
       gsap.to(els, {
-        autoAlpha: 1, y: 0, stagger: 0.07, duration: 0.85, overwrite: true,
+        autoAlpha: 1, y: 0, stagger: 0.04, duration: 0.5, overwrite: true,
         onComplete: () => els.forEach((e) => e.classList.add("is-in")),
       }),
   });
