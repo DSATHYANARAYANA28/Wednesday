@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Wednesday — Software Engineering & IT Services Agency | We Build It. We Run It.</title>
-  <meta name="description" content="Wednesday is a full-service software engineering agency. Custom web, mobile & enterprise systems — built, launched and operated 24/7. Published rates, live client work, ISO 27001 compliance. Everything live, everything verified.">
+  <meta name="description" content="Full-service software engineering agency with published rates — custom web, mobile & AI systems built, launched and operated 24/7. Know the price before we talk.">
   <meta name="keywords" content="software engineering agency, custom software development, web development, mobile app development, AI automation, managed hosting, ISO 27001, B2B portals, India">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="author" content="Wednesday Technology">
@@ -55,9 +55,13 @@
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+91-96554-19510",
+          "email": "hello@wednesday.technology",
           "contactType": "sales",
           "availableLanguage": ["English", "Hindi", "Tamil"]
         },
+        "sameAs": [
+          "https://github.com/DSATHYANARAYANA28"
+        ],
         "areaServed": "Worldwide",
         "knowsAbout": ["Custom Software Development", "Web Development", "Mobile App Development", "AI Automation", "ISO 27001 Compliance", "Cloud Security", "Managed Hosting"]
       },
@@ -78,12 +82,63 @@
         "telephone": "+91-96554-19510",
         "parentOrganization": { "@id": "https://wednesday.technology/#org" },
         "makesOffer": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Web Development" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "iOS & Android App Development" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Web Development" },
+            "priceSpecification": { "@type": "PriceSpecification", "minPrice": 18000, "priceCurrency": "INR" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "iOS & Android App Development" },
+            "priceSpecification": { "@type": "PriceSpecification", "minPrice": 125000, "priceCurrency": "INR" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI-Powered Automation & Agentic Systems" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "B2B & E-Commerce Systems" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ISO 27001 & SOC 2 Compliance" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Managed Operations & Hosting" } }
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "B2B & E-Commerce Systems" },
+            "priceSpecification": { "@type": "PriceSpecification", "minPrice": 175000, "priceCurrency": "INR" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ISO 27001 & SOC 2 Compliance" },
+            "priceSpecification": { "@type": "PriceSpecification", "minPrice": 35000, "priceCurrency": "INR" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Managed Operations & Hosting" },
+            "priceSpecification": { "@type": "UnitPriceSpecification", "price": 1500, "priceCurrency": "INR", "unitText": "MONTH" } }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://wednesday.technology/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much does a website cost in India?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Our rates are published: a starter one-pager is ₹18,000, a custom landing page ₹35,000, a 5–12 page business website ₹85,000, and an e-commerce store ₹1,75,000 (all excl. GST). Every price is listed on this page before you talk to us." }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does it cost to build a web or mobile app?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A starter app (one module, one role) is ₹1,25,000. A full business web app with auth, roles and reporting is ₹4,50,000, and an offline-capable native Android app is ₹2,50,000 — fixed scope, in writing, excl. GST." }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take to build a website or app?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A starter one-pager ships in 3 working days. A typical custom build runs about six weeks: written spec, build in small reversible steps, independent review, then verification in the real running app before launch." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does the development process look like?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Every build starts as a written spec with success criteria. We build in small reversible steps, pass independent quality and security review gates, verify the software live in production, then operate it 24/7 — hosting, monitoring and maintenance from month one." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is managed hosting and why does my website need it?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Managed hosting means we host, monitor, patch and back up your software after launch, so downtime is never your problem. Plans start at ₹1,500/month, and every build includes managed operations from month one — software nobody runs stops working." }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens after my website or app is launched?",
+            "acceptedAnswer": { "@type": "Answer", "text": "We don't hand over code and vanish. Wednesday hosts and operates what we ship: uptime monitoring, security patches, backups and support under a managed-operations plan, with change requests handled at a published hourly rate of ₹2,500." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is ISO 27001 and does my business need it?",
+            "acceptedAnswer": { "@type": "Answer", "text": "ISO 27001 is the international standard for information-security management. You need it when enterprise deals stall on security questionnaires. Our ISO 27001:2022 services are delivered by a certified Lead Auditor — from a ₹35,000 half-day health-check to certification-ready implementation from ₹3,50,000." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you work with international clients, and what are the payment terms?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes — we work worldwide; international rates are quoted in USD on request. Terms are the same for everyone: 50% advance before work begins, fixed written scope, balance on delivery, and 15-day payment terms." }
+          }
         ]
       }
     ]
@@ -125,6 +180,7 @@
         <a href="#work" class="nav__link nav__cell"><sup>03</sup>Work</a>
         <a href="#products" class="nav__link nav__cell"><sup>04</sup>Products</a>
         <a href="#process" class="nav__link nav__cell"><sup>05</sup>Process</a>
+        <a href="#faq" class="nav__link nav__cell"><sup>06</sup>FAQ</a>
       </nav>
 
       <div class="nav__cell nav__meta nav__readout mono" aria-hidden="true">
@@ -155,6 +211,7 @@
       <a href="#work" class="mobile-menu__link"><span class="mono mobile-menu__num">SHT 03</span>Work</a>
       <a href="#products" class="mobile-menu__link"><span class="mono mobile-menu__num">SHT 04</span>Products</a>
       <a href="#process" class="mobile-menu__link"><span class="mono mobile-menu__num">SHT 05</span>Process</a>
+      <a href="#faq" class="mobile-menu__link"><span class="mono mobile-menu__num">SHT 06</span>FAQ</a>
     </nav>
     <div class="mobile-menu__footer">
       <a href="https://wa.me/919655419510?text=Hi%2C%20I%20saw%20your%20rates%20on%20wednesday.technology%20and%20I%27d%20like%20to%20discuss%20a%20project." class="btn btn--primary" target="_blank" rel="noopener">WhatsApp us ↗</a>
@@ -730,6 +787,55 @@
               </div>
             </li>
           </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SHT 06 — FAQ ===== -->
+    <section class="section faq" id="faq" aria-labelledby="faqHeading">
+      <div class="container">
+        <header class="sheetbar mono reveal">
+          <span class="sheetbar__num">SHT 06</span>
+          <span class="sheetbar__name">FAQ — GENERAL QUERIES</span>
+          <span class="sheetbar__meta">ASKED ON THE INTERNET · ANSWERED HERE</span>
+        </header>
+
+        <h2 class="display display--lg split-slam" id="faqHeading">ASKED,<br><span class="outline">ANSWERED.</span></h2>
+        <p class="section__intro reveal">The questions every client asks — answered with the same published numbers you'll find on this sheet.</p>
+
+        <div class="faq__list reveal">
+          <details class="faq__item">
+            <summary><span class="faq__num mono">Q-001</span><h3 class="faq__q">How much does a website cost in India?</h3><span class="faq__toggle mono" aria-hidden="true">+</span></summary>
+            <p class="faq__a">Our rates are published: a starter one-pager is ₹18,000, a custom landing page ₹35,000, a 5–12 page business website ₹85,000, and an e-commerce store ₹1,75,000 (all excl. GST). Every price is listed on this page before you talk to us.</p>
+          </details>
+          <details class="faq__item">
+            <summary><span class="faq__num mono">Q-002</span><h3 class="faq__q">How much does it cost to build a web or mobile app?</h3><span class="faq__toggle mono" aria-hidden="true">+</span></summary>
+            <p class="faq__a">A starter app (one module, one role) is ₹1,25,000. A full business web app with auth, roles and reporting is ₹4,50,000, and an offline-capable native Android app is ₹2,50,000 — fixed scope, in writing, excl. GST.</p>
+          </details>
+          <details class="faq__item">
+            <summary><span class="faq__num mono">Q-003</span><h3 class="faq__q">How long does it take to build a website or app?</h3><span class="faq__toggle mono" aria-hidden="true">+</span></summary>
+            <p class="faq__a">A starter one-pager ships in 3 working days. A typical custom build runs about six weeks: written spec, build in small reversible steps, independent review, then verification in the real running app before launch.</p>
+          </details>
+          <details class="faq__item">
+            <summary><span class="faq__num mono">Q-004</span><h3 class="faq__q">What does the development process look like?</h3><span class="faq__toggle mono" aria-hidden="true">+</span></summary>
+            <p class="faq__a">Every build starts as a written spec with success criteria. We build in small reversible steps, pass independent quality and security review gates, verify the software live in production, then operate it 24/7 — hosting, monitoring and maintenance from month one.</p>
+          </details>
+          <details class="faq__item">
+            <summary><span class="faq__num mono">Q-005</span><h3 class="faq__q">What is managed hosting and why does my website need it?</h3><span class="faq__toggle mono" aria-hidden="true">+</span></summary>
+            <p class="faq__a">Managed hosting means we host, monitor, patch and back up your software after launch, so downtime is never your problem. Plans start at ₹1,500/month, and every build includes managed operations from month one — software nobody runs stops working.</p>
+          </details>
+          <details class="faq__item">
+            <summary><span class="faq__num mono">Q-006</span><h3 class="faq__q">What happens after my website or app is launched?</h3><span class="faq__toggle mono" aria-hidden="true">+</span></summary>
+            <p class="faq__a">We don't hand over code and vanish. Wednesday hosts and operates what we ship: uptime monitoring, security patches, backups and support under a managed-operations plan, with change requests handled at a published hourly rate of ₹2,500.</p>
+          </details>
+          <details class="faq__item">
+            <summary><span class="faq__num mono">Q-007</span><h3 class="faq__q">What is ISO 27001 and does my business need it?</h3><span class="faq__toggle mono" aria-hidden="true">+</span></summary>
+            <p class="faq__a">ISO 27001 is the international standard for information-security management. You need it when enterprise deals stall on security questionnaires. Our ISO 27001:2022 services are delivered by a certified Lead Auditor — from a ₹35,000 half-day health-check to certification-ready implementation from ₹3,50,000.</p>
+          </details>
+          <details class="faq__item">
+            <summary><span class="faq__num mono">Q-008</span><h3 class="faq__q">Do you work with international clients, and what are the payment terms?</h3><span class="faq__toggle mono" aria-hidden="true">+</span></summary>
+            <p class="faq__a">Yes — we work worldwide; international rates are quoted in USD on request. Terms are the same for everyone: 50% advance before work begins, fixed written scope, balance on delivery, and 15-day payment terms.</p>
+          </details>
         </div>
       </div>
     </section>

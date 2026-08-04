@@ -1,0 +1,29 @@
+# Wednesday Technology
+
+> Full-service software engineering & IT services agency (wednesday.technology).
+> We build custom software and we run it: design, development, launch and 24/7
+> managed operations. Rates are published on the site — no quote-gating.
+
+## Key facts
+
+- Services: custom web development, iOS & Android apps, AI automation & agentic
+  systems, B2B/e-commerce portals, digital experience & branding, managed
+  operations & hosting, ISO 27001 & SOC 2 compliance (delivered by a certified
+  ISO 27001:2022 Lead Auditor).
+- Published rates (INR, excl. GST): websites from ₹18,000; business website
+  ₹85,000; e-commerce ₹1,75,000; business web app ₹4,50,000; Android app
+  ₹2,50,000; managed operations from ₹1,500/month; ISO 27001 health-check
+  ₹35,000; ISO 27001 implementation from ₹3,50,000.
+- Commercial terms: 50% advance, fixed written scope, balance on delivery,
+  15-day payment terms. International clients quoted in USD.
+- Typical build: written spec → small reversible steps → independent review →
+  live verification → ongoing 24/7 operations. Starter one-pager in 3 working
+  days; typical custom build ~6 weeks.
+- In-house products: Slate (school operating system SaaS) and Blackfyre
+  (open-source multi-cloud compliance platform, Apache-2.0).
+- Contact: WhatsApp +91 96554 19510 · hello@wednesday.technology
+
+## Pages
+
+- [Home / full site](https://wednesday.technology/): services, published rates,
+  client work, products, process, FAQ.

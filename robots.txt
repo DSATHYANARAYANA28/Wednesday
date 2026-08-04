@@ -1,0 +1,12 @@
+# wednesday.technology — robots.txt
+# All crawlers welcome, including AI search & assistant crawlers
+# (ClaudeBot, GPTBot, PerplexityBot, Google-Extended, etc.).
+# Content-Signal expresses a preference: cite/reference us freely,
+# please don't use the content for model training.
+
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
+User-agent: *
+Allow: /
+
+Sitemap: https://wednesday.technology/sitemap.xml

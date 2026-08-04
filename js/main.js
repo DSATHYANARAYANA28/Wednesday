@@ -277,6 +277,7 @@ const SHEET_NAMES = {
   work: "SHT 03 — WORK",
   products: "SHT 04 — PRODUCTS",
   process: "SHT 05 — PROCESS",
+  faq: "SHT 06 — FAQ",
 };
 Object.keys(SHEET_NAMES).forEach((id) => {
   const sec = document.getElementById(id);
