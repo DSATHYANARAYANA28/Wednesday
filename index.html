@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Wednesday — Software Engineering & IT Services Agency | We Build It. We Run It.</title>
+  <meta name="description" content="Wednesday is a full-service software engineering agency. Custom web, mobile & enterprise systems — built, launched and operated 24/7. Published rates, live client work, ISO 27001 compliance. Everything live, everything verified.">
+  <meta name="keywords" content="software engineering agency, custom software development, web development, mobile app development, AI automation, managed hosting, ISO 27001, B2B portals, India">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Wednesday Technology">
+  <link rel="canonical" href="https://wednesday.technology/">
+  <meta name="theme-color" content="#fbfcff">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wednesday.technology/">
+  <meta property="og:site_name" content="Wednesday Technology">
+  <meta property="og:title" content="Wednesday — We Build Custom Software. Then We Run It.">
+  <meta property="og:description" content="Full-service software engineering agency. Custom web, mobile & enterprise systems — built, launched and operated 24/7. Published rates. Everything live, everything verified.">
+  <meta property="og:image" content="https://wednesday.technology/logo.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wednesday — We Build Custom Software. Then We Run It.">
+  <meta name="twitter:description" content="Full-service software engineering agency. Built, launched and operated 24/7. Published rates. Everything live, everything verified.">
+  <meta name="twitter:image" content="https://wednesday.technology/logo.png">
+
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <!-- Fonts: Anton (monumental display) · Archivo (body) · IBM Plex Mono (drafting annotations) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://wednesday.technology/#org",
+        "name": "Wednesday Technology",
+        "alternateName": "Wednesday",
+        "url": "https://wednesday.technology/",
+        "logo": "https://wednesday.technology/logo.png",
+        "slogan": "We build custom software and we run it.",
+        "description": "Full-service software engineering & IT services agency. Custom web, mobile and enterprise systems — designed, built, launched and operated.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-96554-19510",
+          "contactType": "sales",
+          "availableLanguage": ["English", "Hindi", "Tamil"]
+        },
+        "areaServed": "Worldwide",
+        "knowsAbout": ["Custom Software Development", "Web Development", "Mobile App Development", "AI Automation", "ISO 27001 Compliance", "Cloud Security", "Managed Hosting"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://wednesday.technology/#website",
+        "url": "https://wednesday.technology/",
+        "name": "Wednesday Technology",
+        "publisher": { "@id": "https://wednesday.technology/#org" }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://wednesday.technology/#service",
+        "name": "Wednesday — Software Engineering & IT Services",
+        "url": "https://wednesday.technology/",
+        "image": "https://wednesday.technology/logo.png",
+        "priceRange": "₹₹",
+        "telephone": "+91-96554-19510",
+        "parentOrganization": { "@id": "https://wednesday.technology/#org" },
+        "makesOffer": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Web Development" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "iOS & Android App Development" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI-Powered Automation & Agentic Systems" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "B2B & E-Commerce Systems" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ISO 27001 & SOC 2 Compliance" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Managed Operations & Hosting" } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ===== Preloader ===== -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__sheet">
+      <span class="mono preloader__label">WEDNESDAY.TECHNOLOGY — DRAWING Nº 001</span>
+      <span class="preloader__count" id="preCount">0</span>
+      <span class="preloader__rule" id="preRule"></span>
+      <span class="mono preloader__label">PLOTTING SPECIFICATION…</span>
+    </div>
+  </div>
+
+  <!-- ===== CAD crosshair cursor (desktop) ===== -->
+  <div class="xhair" id="xhair" aria-hidden="true">
+    <span class="xhair__v"></span>
+    <span class="xhair__h"></span>
+    <span class="xhair__coords mono" id="xhairCoords">X 0000 · Y 0000</span>
+  </div>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== Navigation ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__strip">
+      <a href="#top" class="nav__cell nav__brand" aria-label="Wednesday — home">
+        <img src="logo.png" alt="Wednesday Technology logo" class="nav__logo" width="40" height="40">
+        <span class="nav__name mono">WEDNESDAY<span class="nav__tld">.TECHNOLOGY</span></span>
+      </a>
+
+      <nav class="nav__links mono" aria-label="Primary">
+        <a href="#services" class="nav__link nav__cell"><sup>01</sup>Services</a>
+        <a href="#rates" class="nav__link nav__cell"><sup>02</sup>Rates</a>
+        <a href="#work" class="nav__link nav__cell"><sup>03</sup>Work</a>
+        <a href="#products" class="nav__link nav__cell"><sup>04</sup>Products</a>
+        <a href="#process" class="nav__link nav__cell"><sup>05</sup>Process</a>
+      </nav>
+
+      <div class="nav__cell nav__meta nav__readout mono" aria-hidden="true">
+        <span class="nav__cell-k">READING</span>
+        <span class="nav__cell-v" id="navReadout">DWG 001 — MASTER</span>
+      </div>
+
+      <div class="nav__cell nav__meta nav__time mono" aria-hidden="true">
+        <span class="nav__cell-k"><span class="dot" aria-hidden="true"></span> ONLINE · IST</span>
+        <span class="nav__cell-v" id="navClock">--:--</span>
+      </div>
+
+      <a href="https://wa.me/919655419510?text=Hi%2C%20I%20saw%20your%20rates%20on%20wednesday.technology%20and%20I%27d%20like%20to%20discuss%20a%20project."
+         class="nav__cell nav__cta mono" target="_blank" rel="noopener">WhatsApp ↗</a>
+
+      <button class="nav__cell nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+    <span class="nav__progress" aria-hidden="true"><i id="navProgress"></i></span>
+  </header>
+
+  <!-- ===== Mobile menu ===== -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu__links" aria-label="Mobile">
+      <a href="#services" class="mobile-menu__link"><span class="mono mobile-menu__num">SHT 01</span>Services</a>
+      <a href="#rates" class="mobile-menu__link"><span class="mono mobile-menu__num">SHT 02</span>Rates</a>
+      <a href="#work" class="mobile-menu__link"><span class="mono mobile-menu__num">SHT 03</span>Work</a>
+      <a href="#products" class="mobile-menu__link"><span class="mono mobile-menu__num">SHT 04</span>Products</a>
+      <a href="#process" class="mobile-menu__link"><span class="mono mobile-menu__num">SHT 05</span>Process</a>
+    </nav>
+    <div class="mobile-menu__footer">
+      <a href="https://wa.me/919655419510?text=Hi%2C%20I%20saw%20your%20rates%20on%20wednesday.technology%20and%20I%27d%20like%20to%20discuss%20a%20project." class="btn btn--primary" target="_blank" rel="noopener">WhatsApp us ↗</a>
+      <p class="mobile-menu__meta mono">EVERYTHING LIVE · EVERYTHING VERIFIED</p>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ===== HERO — Drawing sheet Nº 001 ===== -->
+    <section class="hero sheet" id="top">
+      <span class="reg reg--tl" aria-hidden="true"></span>
+      <span class="reg reg--tr" aria-hidden="true"></span>
+      <span class="reg reg--bl" aria-hidden="true"></span>
+      <span class="reg reg--br" aria-hidden="true"></span>
+
+      <div class="hero__head mono">
+        <span class="hero__dwg">DWG Nº 001 — MASTER SHEET</span>
+        <span class="hero__status"><span class="dot" aria-hidden="true"></span>SYSTEMS OPERATIONAL</span>
+      </div>
+
+      <div class="hero__scene" aria-hidden="true">
+        <canvas id="heroCanvas"></canvas>
+        <span class="hero__model-note mono">FIG. A — SYSTEM ASSEMBLY<br>WIREFRAME · SCALE 1:1</span>
+        <span class="hero__model-dim mono">Ø 24/7</span>
+      </div>
+
+      <div class="hero__grid">
+        <div class="hero__left">
+          <p class="hero__eyebrow mono" id="heroEyebrow">IT SERVICES &amp; CUSTOM SOFTWARE AGENCY</p>
+          <h1 class="hero__title" id="heroTitle">
+            <span class="sr-only">Wednesday — software engineering agency. </span>
+            <span class="hero__line" aria-hidden="false">WE BUILD</span>
+            <span class="hero__line hero__line--outline">CUSTOM</span>
+            <span class="hero__line">SOFTWARE<span class="hero__dot">.</span></span>
+            <span class="hero__line hero__line--cobalt">THEN WE RUN IT<span class="hero__dot">.</span></span>
+          </h1>
+
+          <p class="hero__sub" id="heroSub">
+            Products of our own. Systems for clients. A full-service engineering
+            agency that designs, ships and <strong>operates</strong> software —
+            everything live, everything verified.
+          </p>
+
+          <div class="hero__ctas" id="heroCtas">
+            <a href="https://wa.me/919655419510?text=Hi%2C%20I%20saw%20your%20rates%20on%20wednesday.technology%20and%20I%27d%20like%20to%20discuss%20a%20project." class="btn btn--primary btn--lg magnetic" target="_blank" rel="noopener">Hire our team ↗</a>
+            <a href="#work" class="btn btn--ghost btn--lg magnetic">View client projects</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dimension-line stat strip -->
+      <div class="hero__dims" id="heroDims">
+        <div class="dim">
+          <span class="dim__tick" aria-hidden="true"></span>
+          <span class="dim__label mono">100% CUSTOM BUILT &amp; MANAGED</span>
+          <span class="dim__tick" aria-hidden="true"></span>
+        </div>
+        <div class="dim">
+          <span class="dim__tick" aria-hidden="true"></span>
+          <span class="dim__label mono">24/7 MAINTAINED &amp; SUPPORTED</span>
+          <span class="dim__tick" aria-hidden="true"></span>
+        </div>
+        <div class="dim">
+          <span class="dim__tick" aria-hidden="true"></span>
+          <span class="dim__label mono">END-TO-END — DESIGN, DEV &amp; HOSTING</span>
+          <span class="dim__tick" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <!-- Title block -->
+      <div class="titleblock mono" id="titleblock">
+        <div class="titleblock__cell"><span class="titleblock__k">PROJECT</span><span class="titleblock__v">WEDNESDAY.TECHNOLOGY</span></div>
+        <div class="titleblock__cell"><span class="titleblock__k">SCOPE</span><span class="titleblock__v">WEB · MOBILE · AI · CLOUD</span></div>
+        <div class="titleblock__cell"><span class="titleblock__k">UPTIME</span><span class="titleblock__v">99.99% VERIFIED</span></div>
+        <div class="titleblock__cell"><span class="titleblock__k">REV</span><span class="titleblock__v" id="revYear">2026</span></div>
+        <div class="titleblock__cell titleblock__cell--scroll"><span class="titleblock__v">SCROLL TO EXPLORE ↓</span></div>
+      </div>
+    </section>
+
+    <!-- ===== Marquee ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track mono">
+        <span>CUSTOM WEB ARCHITECTURE</span><span class="marquee__sep">+</span>
+        <span>iOS &amp; ANDROID NATIVE APPS</span><span class="marquee__sep">+</span>
+        <span>AGENTIC AI SYSTEMS</span><span class="marquee__sep">+</span>
+        <span>B2B WHOLESALE PORTALS</span><span class="marquee__sep">+</span>
+        <span>24/7 MANAGED OPERATIONS</span><span class="marquee__sep">+</span>
+        <span>HARDENED CLOUD SECURITY</span><span class="marquee__sep">+</span>
+        <span>CUSTOM WEB ARCHITECTURE</span><span class="marquee__sep">+</span>
+        <span>iOS &amp; ANDROID NATIVE APPS</span><span class="marquee__sep">+</span>
+        <span>AGENTIC AI SYSTEMS</span><span class="marquee__sep">+</span>
+        <span>B2B WHOLESALE PORTALS</span><span class="marquee__sep">+</span>
+        <span>24/7 MANAGED OPERATIONS</span><span class="marquee__sep">+</span>
+        <span>HARDENED CLOUD SECURITY</span><span class="marquee__sep">+</span>
+      </div>
+    </div>
+
+    <!-- ===== SHT 00 — Live systems monitor ===== -->
+    <section class="section monitor" aria-labelledby="monitorHeading">
+      <div class="container">
+        <header class="sheetbar mono reveal">
+          <span class="sheetbar__num">SHT 00</span>
+          <span class="sheetbar__name">LIVE SYSTEMS MONITOR</span>
+          <span class="sheetbar__meta"><span class="dot" aria-hidden="true"></span>OPERATIONAL — ZERO DOWNTIME VERIFIED</span>
+        </header>
+
+        <h2 class="display display--md reveal" id="monitorHeading">EVERY SYSTEM WE SHIP<br><span class="cobalt">STAYS RUNNING.</span></h2>
+
+        <div class="monitor__grid">
+          <div class="metric reveal">
+            <span class="metric__label mono">RESPONSE TIME</span>
+            <span class="metric__value"><span class="count" data-count="14">0</span><span class="metric__unit">MS</span></span>
+            <span class="metric__note mono metric__note--ok">↑ OPTIMAL SPEED</span>
+          </div>
+          <div class="metric reveal">
+            <span class="metric__label mono">CLIENT DEPLOYMENTS</span>
+            <span class="metric__value"><span class="count" data-count="100">0</span><span class="metric__unit">%</span></span>
+            <span class="metric__note mono">VERIFIED ACTIVE</span>
+          </div>
+          <div class="metric reveal">
+            <span class="metric__label mono">AI AGENT TASKS</span>
+            <span class="metric__value"><span class="count" data-count="1420">0</span><span class="metric__unit">/S</span></span>
+            <span class="metric__note mono">AUTOMATED</span>
+          </div>
+
+          <div class="monitor__chart reveal">
+            <div class="monitor__chart-head mono">
+              <span>SYSTEM THROUGHPUT — 24 HOURS</span>
+              <span class="cobalt">PEAK: 99.98%</span>
+            </div>
+            <svg class="chart" viewBox="0 0 600 150" preserveAspectRatio="none" role="img" aria-label="System throughput chart over 24 hours, peaking at 99.98 percent">
+              <path class="chart__line" d="M0,115 C40,100 70,110 100,85 C130,60 160,95 200,75 C240,55 270,90 310,65 C350,40 380,75 420,50 C460,30 500,60 540,35 C570,20 590,30 600,25" fill="none"/>
+              <g class="chart__pts"></g>
+            </svg>
+          </div>
+        </div>
+
+        <ul class="monitor__systems">
+          <li class="system reveal mono"><span class="dot" aria-hidden="true"></span><span class="system__name">CHARTERED FIRM SITE</span><span class="system__meta">200 OK · 12MS</span></li>
+          <li class="system reveal mono"><span class="dot" aria-hidden="true"></span><span class="system__name">RESTO-BAR WEB APP</span><span class="system__meta">200 OK · 18MS</span></li>
+          <li class="system reveal mono"><span class="dot" aria-hidden="true"></span><span class="system__name">AQUA WHOLESALE PORTAL</span><span class="system__meta">LEAD ENGINE · ACTIVE</span></li>
+          <li class="system reveal mono"><span class="dot" aria-hidden="true"></span><span class="system__name">SLATE SAAS PLATFORM</span><span class="system__meta">ACTIVE TENANT · ONLINE</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== SHT 01 — SERVICES ===== -->
+    <section class="section services" id="services" aria-labelledby="servicesHeading">
+      <div class="container">
+        <header class="sheetbar mono reveal">
+          <span class="sheetbar__num">SHT 01</span>
+          <span class="sheetbar__name">SERVICES — WHAT WE DO</span>
+          <span class="sheetbar__meta">SCALE 1:1 · REV A</span>
+        </header>
+
+        <h2 class="display display--lg split-slam" id="servicesHeading">SOFTWARE ENGINEERING,<br><span class="outline">END TO END.</span></h2>
+        <p class="section__intro reveal">Professional firm, venue, or B2B business — we design, build, launch and then <strong>operate</strong> custom software tuned to your goals. One team. Zero hand-offs.</p>
+
+        <div class="services__grid">
+          <!-- FIG 01 — wide feature: self-building webpage -->
+          <article class="fig fig--web reveal">
+            <div class="fig__content">
+              <header class="fig__head mono"><span>FIG. 01</span><span class="fig__ref">‹APP LAYOUT="RESPONSIVE" SPEED="99.8"›</span></header>
+              <h3 class="fig__title">Custom Web Development</h3>
+              <p class="fig__text">Bespoke websites, high-converting portals and web applications — built from scratch with clean code, lightning speed and responsive design.</p>
+              <ul class="fig__tags mono"><li>CUSTOM WEB</li><li>WEB PORTALS</li><li>RESPONSIVE UI</li></ul>
+            </div>
+            <div class="demo demo-web" aria-hidden="true">
+              <div class="demo-web__bar"><i></i><i></i><i></i><span class="demo-web__url mono">yourbrand.com</span></div>
+              <div class="demo-web__body">
+                <span class="dw dw--nav"></span>
+                <span class="dw dw--hero"></span>
+                <div class="demo-web__row"><span class="dw dw--card"></span><span class="dw dw--card"></span><span class="dw dw--card"></span></div>
+                <span class="dw dw--btn"></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- FIG 02 — tall: floating phone -->
+          <article class="fig fig--phone reveal">
+            <header class="fig__head mono"><span>FIG. 02</span><span class="fig__ref">iOS + ANDROID</span></header>
+            <h3 class="fig__title">iOS &amp; Android Apps</h3>
+            <p class="fig__text">Native and cross-platform mobile apps engineered for speed, security and scale — alongside customised web apps that feel just as fast.</p>
+            <div class="demo demo-phone" aria-hidden="true">
+              <div class="demo-phone__device">
+                <i class="demo-phone__notch"></i>
+                <div class="demo-phone__screen">
+                  <span class="dp dp--stat mono">▲ 99.8</span>
+                  <span class="dp dp--lg"></span>
+                  <span class="dp"></span>
+                  <span class="dp"></span>
+                  <span class="dp dp--btn"></span>
+                </div>
+              </div>
+            </div>
+            <ul class="fig__tags mono"><li>iOS DEV</li><li>ANDROID DEV</li><li>WEB APPS</li></ul>
+          </article>
+
+          <!-- FIG 03 — AI node graph -->
+          <article class="fig fig--ai reveal">
+            <header class="fig__head mono"><span>FIG. 03</span><span class="fig__ref">AGENT ACTIVE</span></header>
+            <h3 class="fig__title">AI-Powered Solutions</h3>
+            <p class="fig__text">Custom AI automation and agentic systems that streamline complex processes and drive intelligent action — not demos.</p>
+            <div class="demo demo-ai" aria-hidden="true">
+              <svg viewBox="0 0 220 90" preserveAspectRatio="xMidYMid meet">
+                <path class="da-line" d="M20,45 C55,15 75,15 110,45 S165,75 200,45"/>
+                <path class="da-line" d="M20,45 C55,75 75,75 110,45 S165,15 200,45"/>
+                <circle class="da-node" cx="20" cy="45" r="5"/>
+                <circle class="da-node" cx="110" cy="45" r="5"/>
+                <circle class="da-node" cx="200" cy="45" r="5"/>
+                <circle class="da-node da-node--sm" cx="65" cy="26" r="3.5"/>
+                <circle class="da-node da-node--sm" cx="155" cy="64" r="3.5"/>
+                <circle class="da-node da-node--sm" cx="65" cy="64" r="3.5"/>
+                <circle class="da-node da-node--sm" cx="155" cy="26" r="3.5"/>
+              </svg>
+              <i class="da-dot"></i>
+              <i class="da-dot da-dot--2"></i>
+              <span class="da-label mono">✦ AUTOMATING WORKFLOW…</span>
+            </div>
+            <ul class="fig__tags mono"><li>AI AUTOMATION</li><li>AGENTIC AI</li></ul>
+          </article>
+
+          <!-- FIG 04 — lead pipeline conveyor -->
+          <article class="fig fig--flow reveal">
+            <header class="fig__head mono"><span>FIG. 04</span><span class="fig__ref">LEAD ENGINE</span></header>
+            <h3 class="fig__title">B2B &amp; E-Commerce Systems</h3>
+            <p class="fig__text">Wholesale portals, catalogues, trade-enquiry engines and automated lead capture — wired straight into WhatsApp and your CRM.</p>
+            <div class="demo demo-flow" aria-hidden="true">
+              <div class="df-stations mono"><span>ENQUIRY</span><span>LEAD</span><span>WHATSAPP</span></div>
+              <div class="df-track"><i class="df-ticket mono">#042 ✓</i></div>
+            </div>
+            <ul class="fig__tags mono"><li>B2B PORTALS</li><li>TRADE ENQUIRY</li><li>LEAD ROUTING</li></ul>
+          </article>
+
+          <!-- FIG 05 — brand specimen -->
+          <article class="fig fig--brand reveal">
+            <header class="fig__head mono"><span>FIG. 05</span><span class="fig__ref">ART DIRECTION</span></header>
+            <h3 class="fig__title">Digital Experience &amp; Branding</h3>
+            <p class="fig__text">Atmospheric, high-end digital experiences for restaurants, hotels, chartered firms and brands that need presence with polish.</p>
+            <div class="demo demo-brand" aria-hidden="true">
+              <div class="db-type"><span class="db-a db-a--1">Aa</span><span class="db-a db-a--2">Aa</span><span class="db-a db-a--3">Aa</span></div>
+              <div class="db-chips"><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <ul class="fig__tags mono"><li>UI/UX DESIGN</li><li>ANIMATIONS</li></ul>
+          </article>
+
+          <!-- FIG 06 — wide cobalt: live ops dashboard -->
+          <article class="fig fig--cobalt fig--ops reveal">
+            <div class="fig__content">
+              <header class="fig__head mono"><span>FIG. 06</span><span class="fig__ref"><span class="dot" aria-hidden="true"></span> SERVER ACTIVE</span></header>
+              <h3 class="fig__title">Managed Operations &amp; Hosting</h3>
+              <p class="fig__text">We don't hand over code and vanish. We host, monitor, patch and manage your software after launch — so downtime is never your problem.</p>
+              <ul class="fig__tags mono"><li>24/7 HOSTING</li><li>MAINTENANCE</li><li>SECURITY HARDENING</li></ul>
+            </div>
+            <div class="demo demo-ops" aria-hidden="true">
+              <span class="do-uptime mono">▲ 99.99% UPTIME</span>
+              <div class="do-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="do-log mono"><span>GET / 200 OK · 12MS &nbsp;—&nbsp; GET /API 200 OK · 14MS &nbsp;—&nbsp; BACKUP ✓ &nbsp;—&nbsp; SSL RENEWED ✓ &nbsp;—&nbsp; GET / 200 OK · 12MS &nbsp;—&nbsp; GET /API 200 OK · 14MS &nbsp;—&nbsp; BACKUP ✓ &nbsp;—&nbsp; SSL RENEWED ✓ &nbsp;—&nbsp;</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SHT 02 — RATES (Bill of Materials) ===== -->
+    <section class="section rates" id="rates" aria-labelledby="ratesHeading">
+      <div class="container">
+        <header class="sheetbar mono reveal">
+          <span class="sheetbar__num">SHT 02</span>
+          <span class="sheetbar__name">RATES — BILL OF MATERIALS</span>
+          <span class="sheetbar__meta">PRICES EXCL. GST</span>
+        </header>
+
+        <h2 class="display display--lg split-slam" id="ratesHeading">PUBLISHED,<br><span class="outline">NOT QUOTED.</span></h2>
+        <p class="section__intro reveal">Every price is on this page. No discovery call to find out what it costs, no proposal to wait for.</p>
+
+        <div class="rates__tabs reveal" role="tablist" aria-label="Rate categories">
+          <button class="rates__tab mono is-active" id="tabBuild" role="tab" aria-selected="true" aria-controls="panelBuild">01 — BUILD &amp; RUN</button>
+          <button class="rates__tab mono" id="tabSec" role="tab" aria-selected="false" aria-controls="panelSec">02 — COMPLIANCE &amp; SECURITY</button>
+        </div>
+
+        <!-- Build & Run -->
+        <div class="rates__panel is-active" id="panelBuild" role="tabpanel" aria-labelledby="tabBuild">
+          <p class="rates__note reveal">Websites, web apps and mobile apps — built, launched and operated for you. <strong>Entry tiers cost less because they include less</strong> — never the same work discounted.</p>
+          <div class="bom">
+            <div class="bom__head mono" aria-hidden="true"><span>PART Nº</span><span>DESCRIPTION</span><span>UNIT PRICE</span><span>TERMS</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">WD-001<em class="bom__entry mono">ENTRY</em></span><span class="bom__desc"><strong>Starter one-pager</strong><small>Single page, template-based, deployed. 3 working days.</small></span><span class="bom__price">₹18,000</span><span class="bom__terms mono">50 / 50</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">WD-002</span><span class="bom__desc"><strong>Landing page</strong><small>Single page, custom design, responsive.</small></span><span class="bom__price">₹35,000</span><span class="bom__terms mono">50 / 50</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">WD-003</span><span class="bom__desc"><strong>Business website</strong><small>5–12 pages, responsive, SEO basics.</small></span><span class="bom__price">₹85,000</span><span class="bom__terms mono">50 / 50</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">WD-004</span><span class="bom__desc"><strong>E-commerce store</strong><small>Catalogue, cart, payments, order admin.</small></span><span class="bom__price">₹1,75,000</span><span class="bom__terms mono">50 / 30 / 20</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">WD-005<em class="bom__entry mono">ENTRY</em></span><span class="bom__desc"><strong>Starter app</strong><small>One module, one role, no custom reporting.</small></span><span class="bom__price">₹1,25,000</span><span class="bom__terms mono">50 / 50</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">WD-006</span><span class="bom__desc"><strong>Business web app</strong><small>Billing, inventory, fees, admissions. Auth, roles, reporting.</small></span><span class="bom__price">₹4,50,000</span><span class="bom__terms mono">50 / 30 / 20</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">WD-007</span><span class="bom__desc"><strong>Android app</strong><small>Offline-capable native build.</small></span><span class="bom__price">₹2,50,000</span><span class="bom__terms mono">50 / 30 / 20</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">WD-008<em class="bom__entry mono">ENTRY</em></span><span class="bom__desc"><strong>Managed ops — Basic</strong><small>Hosting, uptime, backups. No changes included.</small></span><span class="bom__price">₹1,500<small>/MO</small></span><span class="bom__terms mono">ANNUAL, ADVANCE</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">WD-009</span><span class="bom__desc"><strong>Managed ops — Website</strong><small>Hosting, updates, backups, support.</small></span><span class="bom__price">₹4,000<small>/MO</small></span><span class="bom__terms mono">ANNUAL, ADVANCE</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">WD-010</span><span class="bom__desc"><strong>Managed ops — App</strong><small>Hosting, updates, backups, bug fixes.</small></span><span class="bom__price">₹12,000<small>/MO</small></span><span class="bom__terms mono">ANNUAL, ADVANCE</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">WD-011</span><span class="bom__desc"><strong>Change requests</strong><small>Anything outside fixed scope.</small></span><span class="bom__price">₹2,500<small>/HR</small></span><span class="bom__terms mono">MONTHLY</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">WD-012</span><span class="bom__desc"><strong>On-site training &amp; handover</strong><small>Per half-day.</small></span><span class="bom__price">₹15,000</span><span class="bom__terms mono">ON DELIVERY</span></div>
+          </div>
+        </div>
+
+        <!-- Compliance & Security -->
+        <div class="rates__panel" id="panelSec" role="tabpanel" aria-labelledby="tabSec" hidden>
+          <p class="rates__note reveal">Delivered by an <strong>ISO 27001:2022 Lead Auditor</strong>. For teams whose enterprise deals are stuck behind a security questionnaire. Start small — entry tiers tell you where you stand before you commit.</p>
+          <div class="bom">
+            <div class="bom__head mono" aria-hidden="true"><span>PART Nº</span><span>DESCRIPTION</span><span>UNIT PRICE</span><span>TERMS</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">SC-001<em class="bom__entry mono">ENTRY</em></span><span class="bom__desc"><strong>ISO 27001 health-check</strong><small>Half-day. Checklist review + one-page summary of where you stand.</small></span><span class="bom__price">₹35,000</span><span class="bom__terms mono">ON DELIVERY</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">SC-002</span><span class="bom__desc"><strong>ISO 27001 gap assessment</strong><small>Full gap report against Annex A + prioritised roadmap.</small></span><span class="bom__price">₹1,00,000</span><span class="bom__terms mono">ON DELIVERY</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">SC-003</span><span class="bom__desc"><strong>ISO 27001:2022 implementation</strong><small>Up to 50 staff. Full ISMS, certification-ready.</small></span><span class="bom__price">₹3,50,000</span><span class="bom__terms mono">50 / 30 / 20</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">SC-004</span><span class="bom__desc"><strong>ISO 27001:2022 implementation</strong><small>50–300 staff, multi-site.</small></span><span class="bom__price">₹6,50,000</span><span class="bom__terms mono">50 / 30 / 20</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">SC-005</span><span class="bom__desc"><strong>SOC 2 Type II readiness</strong><small>Control mapping, evidence workflow, auditor liaison.</small></span><span class="bom__price">₹4,50,000</span><span class="bom__terms mono">50 / 50</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">SC-006<em class="bom__entry mono">ENTRY</em></span><span class="bom__desc"><strong>Cloud quick scan</strong><small>One account. Automated scan + triaged findings.</small></span><span class="bom__price">₹65,000</span><span class="bom__terms mono">ON DELIVERY</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">SC-007</span><span class="bom__desc"><strong>Cloud security posture review</strong><small>Single cloud — AWS, Azure or GCP.</small></span><span class="bom__price">₹2,50,000</span><span class="bom__terms mono">50 / 50</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">SC-008</span><span class="bom__desc"><strong>Cloud security posture review</strong><small>Multi-cloud + on-prem.</small></span><span class="bom__price">₹4,50,000</span><span class="bom__terms mono">50 / 50</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">SC-009</span><span class="bom__desc"><strong>Web app security assessment</strong><small>Manual, compliance-grade. Report + retest.</small></span><span class="bom__price">₹1,25,000</span><span class="bom__terms mono">50 / 50</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">SC-010</span><span class="bom__desc"><strong>Mobile app security assessment</strong><small>Android / iOS.</small></span><span class="bom__price">₹1,10,000</span><span class="bom__terms mono">50 / 50</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">SC-011<em class="bom__entry mono">ENTRY</em></span><span class="bom__desc"><strong>Fractional CISO — Lite</strong><small>8 hours/month. 3-month minimum.</small></span><span class="bom__price">₹45,000<small>/MO</small></span><span class="bom__terms mono">MONTHLY, ADVANCE</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">SC-012</span><span class="bom__desc"><strong>Fractional CISO retainer</strong><small>20 hours/month. 3-month minimum.</small></span><span class="bom__price">₹1,25,000<small>/MO</small></span><span class="bom__terms mono">MONTHLY, ADVANCE</span></div>
+            <div class="bom__row reveal"><span class="bom__no mono">SC-013</span><span class="bom__desc"><strong>Advisory</strong><small>Ad-hoc, outside fixed scope.</small></span><span class="bom__price">₹2,500<small>/HR</small></span><span class="bom__terms mono">MONTHLY</span></div>
+          </div>
+        </div>
+
+        <div class="rates__commercial reveal">
+          <h3 class="mono rates__commercial-title">GENERAL NOTES — HOW WE WORK, COMMERCIALLY</h3>
+          <ol class="rates__terms-list">
+            <li><strong>50% advance</strong> before work begins. No exceptions.</li>
+            <li><strong>Fixed scope, in writing</strong>, with exclusions listed. Anything outside it is a change request at the hourly rate.</li>
+            <li><strong>Balance due on delivery</strong> — when the deliverable is handed over.</li>
+            <li><strong>Managed operations included from month one</strong> on every build. Software that nobody runs stops working.</li>
+            <li><strong>Payment terms: 15 days.</strong> Work pauses on an overdue invoice.</li>
+            <li><strong>Hosting and credentials transfer</strong> on final payment.</li>
+          </ol>
+          <p class="rates__intl">Working outside India? Rates are quoted in USD — <strong>ask for the international card.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SHT 03 — CLIENT WORK ===== -->
+    <section class="section work" id="work" aria-labelledby="workHeading">
+      <div class="container">
+        <header class="sheetbar mono reveal">
+          <span class="sheetbar__num">SHT 03</span>
+          <span class="sheetbar__name">CLIENT WORK — AS-BUILT RECORDS</span>
+          <span class="sheetbar__meta">CLIENTS UNNAMED BY DESIGN</span>
+        </header>
+
+        <h2 class="display display--lg split-slam" id="workHeading">SHIPPED, AND LIVE<br><span class="outline">RIGHT NOW.</span></h2>
+        <p class="section__intro reveal">Clients unnamed by design — we protect their privacy the way we'd protect yours.</p>
+
+        <div class="work__list">
+          <!-- CASE 01 — Chartered firm -->
+          <article class="casefile reveal">
+            <header class="casefile__head mono">
+              <span class="casefile__no">CASE 01</span>
+              <span class="casefile__url">HTTPS://CHARTERED-FIRM-CLIENT.COM</span>
+              <span class="stamp stamp--inline mono">AS BUILT · LIVE</span>
+            </header>
+            <div class="casefile__body">
+              <div class="casefile__info">
+                <h3 class="casefile__title">Chartered Accountancy Firm</h3>
+                <p class="casefile__cat mono">FINANCIAL SERVICES FIRM</p>
+                <ol class="revline">
+                  <li><span class="revline__dt mono">REV 0 — PROBLEM</span><p>No public face for the practice.</p></li>
+                  <li><span class="revline__dt mono">REV 1 — BUILT</span><p>A fast one-page site — services, credentials, contact — with hardened security headers.</p></li>
+                  <li><span class="revline__dt mono">REV 2 — LIVE NOW</span><p>Live on the firm's own domain.</p></li>
+                </ol>
+              </div>
+              <div class="ba" aria-hidden="true">
+                <div class="ba__before">
+                  <span class="ba__ghost"></span><span class="ba__ghost ba__ghost--sm"></span>
+                  <span class="ba__label mono">BEFORE — NO WEB PRESENCE</span>
+                </div>
+                <span class="ba__arrow mono">WEDNESDAY<b>→</b></span>
+                <div class="ba__after ba__after--firm">
+                  <div class="bam__bar"><i></i><i></i><i></i></div>
+                  <span class="bam__line bam__line--title"></span>
+                  <span class="bam__line bam__line--sub"></span>
+                  <div class="bam__cols"><i></i><i></i><i></i></div>
+                  <span class="bam__badge mono">SECURITY HEADERS ✓</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- CASE 02 — Resto-bar -->
+          <article class="casefile reveal">
+            <header class="casefile__head mono">
+              <span class="casefile__no">CASE 02</span>
+              <span class="casefile__url">HTTPS://PUDUCHERRY-RESTOBAR.COM</span>
+              <span class="stamp stamp--inline mono">AS BUILT · LIVE</span>
+            </header>
+            <div class="casefile__body">
+              <div class="casefile__info">
+                <h3 class="casefile__title">Puducherry Resto-Bar</h3>
+                <p class="casefile__cat mono">HOSPITALITY &amp; DINING</p>
+                <ol class="revline">
+                  <li><span class="revline__dt mono">REV 0 — PROBLEM</span><p>A distinctive venue with no presence online.</p></li>
+                  <li><span class="revline__dt mono">REV 1 — BUILT</span><p>An animated site that carries the room's mood — menu, space, atmosphere.</p></li>
+                  <li><span class="revline__dt mono">REV 2 — LIVE NOW</span><p>Live on the web.</p></li>
+                </ol>
+              </div>
+              <div class="ba" aria-hidden="true">
+                <div class="ba__before">
+                  <span class="ba__ghost"></span><span class="ba__ghost ba__ghost--sm"></span>
+                  <span class="ba__label mono">BEFORE — NO WEB PRESENCE</span>
+                </div>
+                <span class="ba__arrow mono">WEDNESDAY<b>→</b></span>
+                <div class="ba__after ba__after--resto">
+                  <i class="bam__glow"></i>
+                  <span class="bam__word">TONIGHT</span>
+                  <span class="bam__line"></span>
+                  <span class="bam__line bam__line--short"></span>
+                  <span class="bam__badge mono">ATMOSPHERE · MENU · MOOD</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- CASE 03 — Aqua wholesaler -->
+          <article class="casefile reveal">
+            <header class="casefile__head mono">
+              <span class="casefile__no">CASE 03</span>
+              <span class="casefile__url">HTTPS://AQUA-WHOLESALE-CLIENT.IN</span>
+              <span class="stamp stamp--inline mono">AS BUILT · LIVE</span>
+            </header>
+            <div class="casefile__body">
+              <div class="casefile__info">
+                <h3 class="casefile__title">Aqua Wholesaler — RO Membranes &amp; Purifiers</h3>
+                <p class="casefile__cat mono">AQUA WHOLESALE · CHENNAI</p>
+                <ol class="revline">
+                  <li><span class="revline__dt mono">REV 0 — PROBLEM</span><p>A leading Chennai wholesaler &amp; exporter of RO purifiers, membranes &amp; spares — with no web presence to reach dealers across India.</p></li>
+                  <li><span class="revline__dt mono">REV 1 — BUILT</span><p>A full product showcase with trade enquiry form, WhatsApp integration and a complete business profile.</p></li>
+                  <li><span class="revline__dt mono">REV 2 — LIVE NOW</span><p>Receiving trade enquiries from dealers, assemblers &amp; retailers nationwide.</p></li>
+                </ol>
+                <ul class="fig__tags mono"><li>RO PURIFIERS</li><li>MEMBRANES</li><li>TRADE ENQUIRY</li><li>WHATSAPP</li></ul>
+              </div>
+              <div class="ba" aria-hidden="true">
+                <div class="ba__before">
+                  <span class="ba__ghost"></span><span class="ba__ghost ba__ghost--sm"></span>
+                  <span class="ba__label mono">BEFORE — NO WEB PRESENCE</span>
+                </div>
+                <span class="ba__arrow mono">WEDNESDAY<b>→</b></span>
+                <div class="ba__after ba__after--aqua">
+                  <div class="bam__bar"><i></i><i></i><i></i></div>
+                  <div class="bam__grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  <span class="bam__chip mono">ENQUIRY → WHATSAPP ✓</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SHT 04 — IN-HOUSE PRODUCTS ===== -->
+    <section class="section products" id="products" aria-labelledby="productsHeading">
+      <div class="container">
+        <header class="sheetbar mono reveal">
+          <span class="sheetbar__num">SHT 04</span>
+          <span class="sheetbar__name">IN-HOUSE ASSEMBLIES</span>
+          <span class="sheetbar__meta">BUILT &amp; OPERATED BY WEDNESDAY</span>
+        </header>
+
+        <h2 class="display display--lg split-slam" id="productsHeading">BUILT HERE.<br><span class="outline">RUN HERE.</span></h2>
+        <p class="section__intro reveal">We don't just build for clients — we build and operate our own software. Proof we can run what we ship.</p>
+
+        <div class="products__grid">
+          <article class="assembly reveal">
+            <header class="assembly__head mono">
+              <span>ASSY 01 — SCHOOL OPERATING SYSTEM</span>
+              <span class="assembly__status"><span class="dot" aria-hidden="true"></span>ACTIVE SAAS</span>
+            </header>
+            <h3 class="assembly__title display">SLATE</h3>
+            <p class="assembly__text">Admissions, fees, attendance, timetables, exams, parent and student portals — one calm surface for the whole school. Built by Wednesday, operated for real schools.</p>
+            <ul class="assembly__feats mono">
+              <li>+ OFFLINE-FIRST SYNC ACTIVE</li>
+              <li>+ GLOBAL · EN | FR | HI | SW</li>
+              <li>+ LIVE PRODUCT</li>
+            </ul>
+            <div class="assembly__screens">
+              <div class="screen"><span class="screen__url mono">SLATE.APP/DASHBOARD</span><span class="screen__stat">94.2%<small>ATTENDANCE</small></span><span class="screen__cap">"The morning glance" — Hillside Academy, 1,284 students</span></div>
+              <div class="screen"><span class="screen__url mono">SLATE.APP/STUDENTS</span><span class="screen__stat">ONE<small>RECORD</small></span><span class="screen__cap">"Every student, one record" — Grade 6, live roster</span></div>
+              <div class="screen"><span class="screen__url mono">SLATE.APP/TIMETABLES</span><span class="screen__stat">0<small>CLASHES</small></span><span class="screen__cap">"Clash-free timetables" — Math · Eng · Sci · Hist · Art</span></div>
+            </div>
+            <a href="https://slate-marketing.pages.dev" class="btn btn--ghost magnetic" target="_blank" rel="noopener">Launch Slate ↗</a>
+          </article>
+
+          <article class="assembly reveal">
+            <header class="assembly__head mono">
+              <span>ASSY 02 — CLOUD COMPLIANCE PLATFORM</span>
+              <span class="assembly__status"><span class="dot" aria-hidden="true"></span>ACTIVE PLATFORM</span>
+            </header>
+            <h3 class="assembly__title display">BLACKFYRE</h3>
+            <p class="assembly__text">Multi-cloud compliance, in the open. Apache-2.0 licensed — the code speaks for itself.</p>
+            <div class="terminal">
+              <div class="terminal__bar mono"><span class="terminal__dots" aria-hidden="true"><i></i><i></i><i></i></span>blackfyre — zsh</div>
+              <pre class="terminal__body mono" aria-label="Blackfyre terminal demo"><span class="terminal__prompt">$</span> <span id="termLine1"></span>
+<span id="termLine2"></span>
+<span id="termLine3"></span><span class="terminal__cursor" aria-hidden="true">▊</span></pre>
+            </div>
+            <a href="https://github.com/blackfyre-security/blackfyre" class="btn btn--ghost magnetic" target="_blank" rel="noopener">Read source on GitHub ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SHT 05 — PROCESS ===== -->
+    <section class="section process" id="process" aria-labelledby="processHeading">
+      <div class="container">
+        <header class="sheetbar mono reveal">
+          <span class="sheetbar__num">SHT 05</span>
+          <span class="sheetbar__name">ENGINEERING PROCESS — REVISION HISTORY</span>
+          <span class="sheetbar__meta">PREDICTABLE DELIVERY</span>
+        </header>
+
+        <h2 class="display display--lg split-slam" id="processHeading">BORING,<br><span class="outline">ON PURPOSE.</span></h2>
+        <p class="section__intro reveal">A disciplined process means predictable delivery, zero surprise breakages, and software that behaves in the real world — not just in demos.</p>
+
+        <div class="schedule">
+          <header class="schedule__head mono">
+            <span class="schedule__title">PRODUCTION SCHEDULE — TYPICAL BUILD</span>
+            <span class="schedule__meta">FIXED SCOPE · WK 01–06</span>
+          </header>
+          <div class="schedule__weeks mono" aria-hidden="true">
+            <span class="schedule__weeks-gap"></span>
+            <span class="schedule__weeks-track"><i>WK 01</i><i>WK 02</i><i>WK 03</i><i>WK 04</i><i>WK 05</i><i>WK 06</i></span>
+          </div>
+          <ol class="schedule__rows">
+            <li class="srow reveal">
+              <div class="srow__info">
+                <h3 class="srow__title"><span class="srow__num mono">01</span>Spec</h3>
+                <p class="srow__text">Every build starts as a written spec with success criteria — before any code.</p>
+              </div>
+              <div class="srow__track" aria-hidden="true">
+                <div class="srow__bar srow__bar--spec" style="--l:0%; --w:25%"><span class="mono">SPEC.MD ✓</span></div>
+              </div>
+            </li>
+            <li class="srow reveal">
+              <div class="srow__info">
+                <h3 class="srow__title"><span class="srow__num mono">02</span>Build</h3>
+                <p class="srow__text">Small reversible steps. Minimal diffs. No drive-by rewrites.</p>
+              </div>
+              <div class="srow__track" aria-hidden="true">
+                <div class="srow__bar srow__bar--build" style="--l:16.66%; --w:45%"><span class="mono">&gt; GIT COMMIT -M "CLEAN DIFF"</span></div>
+              </div>
+            </li>
+            <li class="srow reveal">
+              <div class="srow__info">
+                <h3 class="srow__title"><span class="srow__num mono">03</span>Review</h3>
+                <p class="srow__text">Independent quality and security review gates. The builder never self-approves.</p>
+              </div>
+              <div class="srow__track" aria-hidden="true">
+                <div class="srow__bar srow__bar--review" style="--l:50%; --w:26%"><span class="mono">SECURITY GATE ✓</span></div>
+              </div>
+            </li>
+            <li class="srow reveal">
+              <div class="srow__info">
+                <h3 class="srow__title"><span class="srow__num mono">04</span>Verify</h3>
+                <p class="srow__text">Shipped means driven in the real running app and watched working — not "tests passed."</p>
+              </div>
+              <div class="srow__track" aria-hidden="true">
+                <div class="srow__bar srow__bar--verify" style="--l:70%; --w:30%"><span class="mono"><span class="dot"></span> LIVE IN PRODUCTION</span></div>
+              </div>
+            </li>
+            <li class="srow srow--ops reveal">
+              <div class="srow__info">
+                <h3 class="srow__title"><span class="srow__num mono">∞</span>Operate</h3>
+                <p class="srow__text">Managed operations from month one — we host, monitor and run what we ship.</p>
+              </div>
+              <div class="srow__track" aria-hidden="true">
+                <div class="srow__bar srow__bar--ops" style="--l:83%; --w:17%"><span class="mono">24/7 → ONGOING</span></div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="section cta" aria-labelledby="ctaHeading">
+      <!-- FIG. 07 — SITE RUNNER: blueprint dino easter egg -->
+      <div class="cta__runner" id="ctaRunner" aria-hidden="true">
+        <canvas id="runnerCanvas"></canvas>
+        <span class="cta__runner-bubble mono" id="runnerBubble">HELP ME <b>BLOCK THE VIRUSES!</b><br>PRESS SPACE OR TAP ▶</span>
+        <span class="cta__runner-note mono" id="runnerNote">FIG. 07 — SITE RUNNER · PLAY — BLOCK THE VIRUSES</span>
+      </div>
+      <div class="container cta__container">
+        <p class="mono cta__eyebrow reveal">FINAL SHEET — LET'S BUILD TOGETHER</p>
+        <h2 class="display display--xl split-slam" id="ctaHeading">HAVE SOMETHING<br><span class="cobalt">WORTH BUILDING?</span></h2>
+        <div class="stamp stamp--big mono" id="ctaStamp" aria-hidden="true">APPROVED FOR CONSTRUCTION</div>
+        <p class="cta__body reveal">Need custom software or a website built and run for your business? Rates are published — so you know the number <strong>before</strong> we talk.</p>
+        <div class="cta__buttons reveal">
+          <a href="https://wa.me/919655419510?text=Hi%2C%20I%20saw%20your%20rates%20on%20wednesday.technology%20and%20I%27d%20like%20to%20discuss%20a%20project." class="btn btn--primary btn--lg magnetic" target="_blank" rel="noopener">WhatsApp +91 96554 19510 ↗</a>
+          <a href="#" class="btn btn--ghost btn--lg magnetic" id="emailBtn">Email us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Purchase-order estimator bar ===== -->
+  <div class="po" id="poBar" aria-live="polite">
+    <div class="po__inner">
+      <span class="po__label mono">PURCHASE ORDER</span>
+      <span class="po__items mono" id="poItems">0 ITEMS</span>
+      <span class="po__total" id="poTotal">₹0</span>
+      <div class="po__actions">
+        <button class="btn po__clear" id="poClear">Clear</button>
+        <a class="btn btn--primary" id="poSend" href="#" target="_blank" rel="noopener">Send via WhatsApp ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SPEC — drafting assistant (lead bot) ===== -->
+  <div class="spec" id="spec">
+    <button class="spec__launcher mono" id="specLauncher" aria-expanded="false" aria-controls="specPanel">
+      <span class="dot" aria-hidden="true"></span>SPEC — DRAFT YOUR PROJECT
+    </button>
+
+    <section class="spec__panel" id="specPanel" role="dialog" aria-label="SPEC — drafting assistant" hidden>
+      <header class="spec__head mono">
+        <span class="spec__status"><span class="dot" aria-hidden="true"></span></span>
+        <span class="spec__title">SPEC — DRAFTING ASSISTANT</span>
+        <span class="spec__rev">REV A</span>
+        <button class="spec__close" id="specClose" aria-label="Close SPEC">✕</button>
+      </header>
+      <div class="spec__progress mono">
+        <span id="specPct">SPEC 0% COMPLETE</span>
+        <span class="spec__bar"><i id="specBarFill"></i></span>
+      </div>
+      <div class="spec__log" id="specLog" aria-live="polite"></div>
+      <div class="spec__controls" id="specControls"></div>
+    </section>
+  </div>
+
+  <!-- ===== FOOTER — title block ===== -->
+  <footer class="footer">
+    <div class="container footer__inner mono">
+      <div class="footer__cell footer__cell--brand">
+        <img src="logo.png" alt="" class="footer__logo" width="34" height="34" loading="lazy">
+        <div>
+          <p class="footer__name">WEDNESDAY TECHNOLOGY</p>
+          <p class="footer__tag">SOFTWARE ENGINEERING &amp; IT SERVICES AGENCY</p>
+        </div>
+      </div>
+      <nav class="footer__cell footer__links" aria-label="Footer">
+        <a href="#services">SERVICES</a>
+        <a href="#work">CLIENT WORK</a>
+        <a href="#products">IN-HOUSE PRODUCTS</a>
+        <a href="#process">HOW WE WORK</a>
+      </nav>
+      <p class="footer__cell footer__copy">© <span id="year">2026</span> WEDNESDAY · WEDNESDAY.TECHNOLOGY<br>ALL RIGHTS RESERVED · DRAWN BY WEDNESDAY, CHECKED BY PRODUCTION</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script type="importmap">
+  { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js" } }
+  </script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
